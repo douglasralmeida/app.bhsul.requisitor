@@ -30,9 +30,9 @@ app.get('/teste', function (req, res) {
 
 //POST
 app.post('/', function(req, res) {
-  if (req.body.url && req.body.url.length > 0) {
-    console.log('URL ' + req.body.url);
-    requestify.get(req.body.url)
+  if (req.body.endereco && req.body.endereco.length > 0) {
+    console.log('URL ' + req.body.endereco);
+    requestify.get(req.body.endereco)
     .then(function(response) {
       res.send(response.body())
     });
