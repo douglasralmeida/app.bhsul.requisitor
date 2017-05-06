@@ -27,10 +27,13 @@ app.get('/teste', function (req, res) {
 
 //POST
 app.post('/', function(req, res) {
-  requestify.get(req.body.url)
-  .then(function(response) {
-    res.send(response.body())
-  });
+  if (!req.body.url || !req.body.url.length)
+    res.status(400).send('URL vazia.');
+  else
+    requestify.get(req.body.url)
+    .then(function(response) {
+      res.send(response.body())
+    });
 });
 
 app.listen(PORT);

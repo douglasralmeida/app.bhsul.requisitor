@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Requisitor de Dados na Web do Portal da BH Sul",
   "author": "Douglas R.Almeida <douglasralmeida@live.com>",
-  "license" : "Sem licença",
+  "license" : "NLPL",
   "repository": {
     "type" : "git",
     "url" : "https://github.com/douglasralmeida/app.bhsul.requisitor.git"
