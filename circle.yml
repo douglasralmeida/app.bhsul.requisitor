@@ -1,0 +1,20 @@
+machine:
+  node:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - npm install
+
+test:
+  override:
+    - mocha
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker build -t douglasralmeida/app.bhsul.requisitor .
+      - docker login -e douglasralmeida@live.com -u douglasralmeida -p $DOCKER_PASS
+      - docker push douglasralmeida/app.bhsul.requisitor

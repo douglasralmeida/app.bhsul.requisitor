@@ -1,0 +1,21 @@
+{
+  "name": "BHSul_RequisitorApp",
+  "version": "1.0.0",
+  "description": "Requisitor de Dados na Web do Portal da BH Sul",
+  "author": "Douglas R.Almeida <douglasralmeida@live.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/test.js"
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+	"cors": "^2.8.0",
+	"requestify": "^0.2.5"
+  },
+  "devDependencies": {
+  "chai": "*",
+  "chai-http": "*",
+  "mocha": "*"
+  }
+}
