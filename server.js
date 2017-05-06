@@ -35,3 +35,4 @@ app.post('/', function(req, res) {
 
 app.listen(PORT);
 console.log('Executando em http://localhost:'  + PORT);
+module.exports = app;
