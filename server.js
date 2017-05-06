@@ -1,6 +1,7 @@
 'use strict';
 
 var express = require('express');
+var bodyParser = require('body-parser');
 var requestify = require('requestify');
 var cors = require('cors');
 
@@ -10,6 +11,8 @@ var HOST = '127.0.0.1';
 
 // App
 var app = express();
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); 
 
 var corsOptionsDelegate = function(req, callback){
   var corsOptions;
