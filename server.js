@@ -31,14 +31,17 @@ app.get('/teste', function (req, res) {
 //POST
 app.post('/', function(req, res) {
   if (req.body.endereco && req.body.endereco.length > 0) {
-    console.log('URL ' + req.body.endereco);
+    requestify.headers = {'User-Agent': 'Mozilla/5.0'};//Dominio planalto.gov.br exige user agent.
     requestify.get(req.body.endereco)
     .then(function(response) {
-      res.send(response.body())
+      res.send(response.body);
+    })
+    .fail(function (response) {
+      console.log('Erro ao carregar dado.', response.getCode());
     });
   }
   else
-	res.status(400).send('URL vazia.');
+	  res.status(400).send('URL vazia.');
 });
 
 app.listen(PORT);
